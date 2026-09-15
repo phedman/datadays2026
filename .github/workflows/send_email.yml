@@ -15,8 +15,7 @@ jobs:
         run: |
           pip install jupyter
           pip install -r requirements.txt
-          jupyter nbconvert --to html --template basic --execute analysis.ipynb --output analysis_clean.html
-
+          jupyter nbconvert --to html --template basic --execute --no-input --TemplateExporter.exclude_markdown=True analysis.ipynb --output analysis_clean.html
       - name: "Send Mail"
         uses: dawidd6/action-send-mail@v18
         with:
