@@ -1,16 +1,15 @@
 name: 'Email Notification Workflow'
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 8 * * 1'
+on:  
+  workflow_dispatch:  
+  schedule:    
+    - cron: '0 8 * * Mon'
 
-jobs:
-  email:
-    runs-on: ubuntu-latest
+jobs:  
+  email:    
+    runs-on: ubuntu-latest    
     steps:
       - uses: actions/checkout@v4
-
       - name: "Convert Notebook"
         run: |
           pip install jupyter
